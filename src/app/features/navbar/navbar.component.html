@@ -1,0 +1,26 @@
+<div class="navbar">
+  <div class="navbar-items">
+    <div class="logo">
+      <a routerLink="/"><mat-icon class="home-icon" aria-hidden="false" aria-label="Home icon">home</mat-icon></a>
+      <h2>Giulia Roperto</h2>
+    </div>
+    <div class="navbar-links">
+      <!-- changing from buttons with conditional rendering to routes -->
+
+      <!-- <ul class="navbar-list">
+        <button (click)="updateContent($event)"><li><div><span class="navbar-list-text">whoami</span><span class="navbar-list-icon"></span></div></li></button>
+        <button (click)="updateContent($event)"><li><div><span class="navbar-list-text">contact me</span><span class="navbar-list-icon"></span></div></li></button>
+      </ul> -->
+      
+      <ul class="navbar-list">
+        <a routerLink="/about"><li><div><span class="navbar-list-text">whoami</span><span class="navbar-list-icon"></span></div></li></a>
+        <a routerLink="/contact"><li><div><span class="navbar-list-text">contact me</span><span class="navbar-list-icon"></span></div></li></a>
+      </ul>
+    </div>
+  </div>
+  <div class="language">
+    <spa-navbar-menu (changeLangEvent)="changePageLanguage($event)"></spa-navbar-menu>
+  </div>
+</div>
+
+<!-- <a routerLink="/heroes">Heroes</a> -->

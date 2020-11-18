@@ -1,0 +1,8 @@
+<div class="navbar-menu">
+  <button class="lang-btn" mat-button [matMenuTriggerFor]="beforeMenu"><mat-icon aria-hidden="false" aria-label="Language icon">language</mat-icon><span>{{ lang }}</span></button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="changeLanguage($event)">PT</button>
+    <button mat-menu-item (click)="changeLanguage($event)">EN</button>
+    <button mat-menu-item (click)="changeLanguage($event)">IT</button>
+  </mat-menu>
+</div>
