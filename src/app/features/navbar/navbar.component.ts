@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   chosenLanguage: string;
+
   @Output() updateLangEvent = new EventEmitter<string>();
   // @Output() updateContentEvent = new EventEmitter<string>();
 
@@ -16,6 +17,7 @@ export class NavbarComponent implements OnInit {
   }
 
   changePageLanguage(lang: string) {
+    console.log(lang);
     this.chosenLanguage = lang;
     this.updateLang();
   }
@@ -23,6 +25,8 @@ export class NavbarComponent implements OnInit {
   updateLang() {
     this.updateLangEvent.emit(this.chosenLanguage);
   }
+
+  // changing from buttons with conditional rendering to routes
 
   // updateContent(event) {
   //   console.log(event.target.innerText);

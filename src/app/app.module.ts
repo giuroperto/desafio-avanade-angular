@@ -14,6 +14,7 @@ import { NavbarComponent } from './features/navbar/navbar.component';
 import { NavbarMenuComponent } from './features/navbar-menu/navbar-menu.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AboutComponent } from './about/about.component';
     NavbarMenuComponent,
     ContactComponent,
     AboutComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

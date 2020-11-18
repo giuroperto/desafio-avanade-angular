@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { TextTranslationService } from '../shared/text-translation.service';
 
 @Component({
   selector: 'spa-home',
@@ -6,50 +7,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  language: string = "PT";
+  @Input() lang: string;
+
+  // language: string = "PT";
+
   // isAbout: boolean = false;
   // isContact: boolean = false;
   // isLanding: boolean = true;
-  txtLanding: string;
-  txtEN: string = "Welcome to my first Angular web app!!!";
-  txtIT: string = "Benvenuti alla mia prima applicazione web in Angular!!!";
-  txtPT: string = "Bem-vindos à minha primeira web app em Angular!!!";
 
-  constructor() { }
+  txtLanding: string;
+
+  constructor(private txttranslationservice: TextTranslationService) { }
 
   ngOnInit(): void {
     this.changeTxtLanding();
   }
-
-  setLanguage(newLang: string) {
-    this.language = newLang;
+  
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(this.lang);
     this.changeTxtLanding();
   }
 
-  // changeContent(content: string) {
-  //   console.log(content);
-  //   if (content === "about") {
-  //     this.isAbout = true;
-  //     this.isContact = false;
-  //     this.isLanding = false;
-  //   } else if (content === "contact") {
-  //     this.isContact = true;
-  //     this.isAbout = false;
-  //     this.isLanding = false;
-  //   } else {
-  //     this.isAbout = false;
-  //     this.isContact = false;
-  //     this.isLanding = true;
-  //   }
+  // setLanguage(newLang: string) {
+  //   this.language = newLang;
+  //   this.changeTxtLanding();
   // }
 
   changeTxtLanding() {
-    if (this.language === 'PT') {
-      this.txtLanding = this.txtPT;
-    } else if (this.language === 'EN') {
-      this.txtLanding = this.txtEN;
+    if (this.lang === 'PT') {
+      this.txtLanding = dataTexts.PT.landing.title;
+    } else if (this.lang === 'EN') {
+      this.txtLanding = dataTexts.EN.landing.title;
     } else {
-      this.txtLanding = this.txtIT;
+      this.txtLanding = dataTexts.IT.landing.title;
     }
   }
 }

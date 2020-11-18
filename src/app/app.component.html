@@ -1,1 +1,3 @@
-<router-outlet></router-outlet>
+<spa-navbar (updateLangEvent)="updateLanguage($event)"></spa-navbar>
+<router-outlet [lang]="language"></router-outlet>
+<spa-footer></spa-footer>
