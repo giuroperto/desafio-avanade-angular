@@ -7,9 +7,8 @@ import { TextTranslationService } from '../shared/text-translation.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @Input() lang: string = "PT";
-  @Input() contentTranslation: Object;
-
+  lang: string;
+  error: any;
   isText: boolean = false;
   titleLanding: string;
   txtLanding: string;
@@ -17,36 +16,29 @@ export class HomeComponent implements OnInit {
   constructor(private textTranslationService: TextTranslationService) { }
 
   ngOnInit(): void {
-    console.log(this.textTranslationService.getData());
-    this.updateContent();
-    // this.changeTxtLanding();
+    this.getLang();
+    this.getContent();
   }
 
-  updateContent() {
-    console.log(this.lang);
-    console.log(this.contentTranslation);
-    console.log(this.contentTranslation[this.lang].landing);
-    this.titleLanding = this.contentTranslation[this.lang].landing.title;
-    this.txtLanding = this.contentTranslation[this.lang].landing.text;
+  getLang() {
+    this.textTranslationService.getLanguage().subscribe(
+      (data: string) => {
+        this.lang = data;
+        console.log(data);
+        this.getContent();
+      }, error => {
+        this.error = error;
+      });
   }
-  
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log(this.lang);
-    // this.changeTxtLanding();
-  // }
 
-  // setLanguage(newLang: string) {
-  //   this.language = newLang;
-  //   this.changeTxtLanding();
-  // }
+  getContent() {
+    this.titleLanding = this.textTranslationService.getData()[this.lang].landing.title;
+    this.txtLanding = this.textTranslationService.getData()[this.lang].landing.text;
 
-  // changeTxtLanding() {
-  //   if (this.lang === 'PT') {
-  //     this.txtLanding = dataTexts.PT.landing.title;
-  //   } else if (this.lang === 'EN') {
-  //     this.txtLanding = dataTexts.EN.landing.title;
-  //   } else {
-  //     this.txtLanding = dataTexts.IT.landing.title;
-  //   }
-  // }
+    if (this.txtLanding !== '') {
+      this.isText = true;
+    }
+    console.log(this.titleLanding);
+    console.log(this.txtLanding);
+  }
 }
