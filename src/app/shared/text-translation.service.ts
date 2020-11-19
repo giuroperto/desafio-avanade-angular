@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 // import { data } from './all-texts.js';
-import { Lang } from './models/lang.model.js';
 
 @Injectable({
   providedIn: 'root'
@@ -75,10 +74,6 @@ export class TextTranslationService {
     return this.test;
   }
   // ----------------------------------
-
-  // public getLanguage(): Observable<any> {
-  //   return this.lang;
-  // } 
 
   public getLanguage() {
     return this.langBehaviourSubj;
