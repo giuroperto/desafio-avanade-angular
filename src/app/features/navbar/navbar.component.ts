@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Lang } from 'src/app/shared/models/lang.model';
+import { TextTranslationService } from '../../shared/text-translation.service';
 
 @Component({
   selector: 'spa-navbar',
@@ -6,29 +8,46 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  chosenLanguage: string;
-  categories: Array<string> = ["whoami", "contact me"];
+  lang: Lang;
+  error: any;
+  categories: Array<string>;
 
-  @Output() updateLangEvent = new EventEmitter<string>();
-  @Input() catTranslation: Object;
+  // @Output() updateLangEvent = new EventEmitter<string>();
+  // @Input() catTranslation: Object;
 
-  constructor() { }
+  constructor(private textTranslationService: TextTranslationService) { }
 
   ngOnInit(): void {
-    this.updateContent();
+    this.getLang();
+    // this.getContent();
+  }
+  
+  // ngOnChange() {
+  //   this.getLang();
+  //   this.getContent();
+  // }
+  
+  ngOnChange() {
+    console.log(this.lang);
   }
 
-  changePageLanguage(lang: string) {
-    this.chosenLanguage = lang;
-    this.updateLang();
-    this.updateContent();
+  getLang() {
+    this.textTranslationService.getLanguage().subscribe(
+      (data: any) => {
+        this.lang = data;
+        console.log(data);
+      }, error => {
+        this.error = error;
+      });
   }
 
-  updateLang() {
-    this.updateLangEvent.emit(this.chosenLanguage);
-  }
+  // getContent() {
+  //   this.categories = this.textTranslationService.getData()[this.lang].navbar.categories;
+  //   console.log(this.categories);
+  //   // console.log(this.textTranslationService.getData()[this.lang].navbar.categories);
+  // }
 
-  updateContent() {
-    this.categories = this.catTranslation[this.chosenLanguage].navbar.categories;
-  }
+  // updateContent() {
+  //   this.categories = this.catTranslation[this.chosenLanguage].navbar.categories;
+  // }
 }

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { data } from './all-texts.js';
+import { BehaviorSubject, Observable } from 'rxjs';
+// import { data } from './all-texts.js';
+import { Lang } from './models/lang.model.js';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,8 @@ export class TextTranslationService {
   test: string = "hello world";
   // ----------------------------------
 
-  lang: string = "PT";
+  private langBehaviourSubj = new BehaviorSubject<string>('PT');
+
   translationData: Object = {
     EN: {
       landing: {
@@ -68,22 +71,26 @@ export class TextTranslationService {
   };
 
   // testing functionality
-  getTest() {
+  public getTest() {
     return this.test;
   }
   // ----------------------------------
 
-  getLanguage() {
-    return this.lang;
+  // public getLanguage(): Observable<any> {
+  //   return this.lang;
+  // } 
+
+  public getLanguage() {
+    return this.langBehaviourSubj;
   } 
 
-  updateLanguage(language) {
+  public updateLanguage(language: string) {
     console.log(language);
-    this.lang = language;
-    console.log(this.lang);
+    this.langBehaviourSubj.next(language);
+    console.log(this.langBehaviourSubj);
   }
 
-  getData() {
+  public getData() {
     return this.translationData;
   }
 

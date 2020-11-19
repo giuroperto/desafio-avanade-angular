@@ -8,7 +8,6 @@ import { TextTranslationService } from '../../shared/text-translation.service';
 })
 export class NavbarMenuComponent implements OnInit {
   lang: string = "PT";
-  // @Output() changeLangEvent = new EventEmitter<string>();
 
   constructor(private textTranslationService: TextTranslationService) { }
 
@@ -19,9 +18,4 @@ export class NavbarMenuComponent implements OnInit {
     this.lang = event.target.innerText;
     this.textTranslationService.updateLanguage(this.lang);
   }
-
-  // changeLanguage(event) {
-  //   this.lang = event.target.innerText;
-  //   this.changeLangEvent.emit(this.lang);
-  // }
 }
