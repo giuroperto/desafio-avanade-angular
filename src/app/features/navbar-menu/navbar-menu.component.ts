@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { TextTranslationService } from '../../shared/text-translation.service';
 
 @Component({
   selector: 'spa-navbar-menu',
@@ -7,15 +8,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NavbarMenuComponent implements OnInit {
   lang: string = "PT";
-  @Output() changeLangEvent = new EventEmitter<string>();
+  // @Output() changeLangEvent = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private textTranslationService: TextTranslationService) { }
 
   ngOnInit(): void {
   }
 
   changeLanguage(event) {
     this.lang = event.target.innerText;
-    this.changeLangEvent.emit(this.lang);
+    this.textTranslationService.updateLanguage(this.lang);
   }
+
+  // changeLanguage(event) {
+  //   this.lang = event.target.innerText;
+  //   this.changeLangEvent.emit(this.lang);
+  // }
 }

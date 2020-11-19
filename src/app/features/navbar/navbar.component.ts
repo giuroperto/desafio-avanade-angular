@@ -7,33 +7,28 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   chosenLanguage: string;
+  categories: Array<string> = ["whoami", "contact me"];
 
   @Output() updateLangEvent = new EventEmitter<string>();
-  // @Output() updateContentEvent = new EventEmitter<string>();
+  @Input() catTranslation: Object;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.updateContent();
   }
 
   changePageLanguage(lang: string) {
-    console.log(lang);
     this.chosenLanguage = lang;
     this.updateLang();
+    this.updateContent();
   }
 
   updateLang() {
     this.updateLangEvent.emit(this.chosenLanguage);
   }
 
-  // changing from buttons with conditional rendering to routes
-
-  // updateContent(event) {
-  //   console.log(event.target.innerText);
-  //   if (event.target.innerText === "whoami") {
-  //     this.updateContentEvent.emit("about");
-  //   } else {
-  //     this.updateContentEvent.emit("contact");
-  //   }
-  // }
+  updateContent() {
+    this.categories = this.catTranslation[this.chosenLanguage].navbar.categories;
+  }
 }

@@ -5,16 +5,9 @@
       <h2>Giulia Roperto</h2>
     </div>
     <div class="navbar-links">
-      <!-- changing from buttons with conditional rendering to routes -->
-
-      <!-- <ul class="navbar-list">
-        <button (click)="updateContent($event)"><li><div><span class="navbar-list-text">whoami</span><span class="navbar-list-icon"></span></div></li></button>
-        <button (click)="updateContent($event)"><li><div><span class="navbar-list-text">contact me</span><span class="navbar-list-icon"></span></div></li></button>
-      </ul> -->
-      
       <ul class="navbar-list">
-        <a routerLink="/about"><li><div><span class="navbar-list-text">whoami</span><span class="navbar-list-icon"></span></div></li></a>
-        <a routerLink="/contact"><li><div><span class="navbar-list-text">contact me</span><span class="navbar-list-icon"></span></div></li></a>
+        <a routerLink="/about"><li><div><span class="navbar-list-text">{{ categories[0] }}</span><span class="navbar-list-icon"></span></div></li></a>
+        <a routerLink="/contact"><li><div><span class="navbar-list-text">{{ categories[1] }}</span><span class="navbar-list-icon"></span></div></li></a>
       </ul>
     </div>
   </div>
@@ -22,5 +15,3 @@
     <spa-navbar-menu (changeLangEvent)="changePageLanguage($event)"></spa-navbar-menu>
   </div>
 </div>
-
-<!-- <a routerLink="/heroes">Heroes</a> -->

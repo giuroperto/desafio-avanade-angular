@@ -1,21 +1,6 @@
-<nav>
-  <!-- <spa-navbar (updateLangEvent)="setLanguage($event)" (updateContentEvent)="changeContent($event)"></spa-navbar> -->
-</nav>
 <div class="home">
-
-  <!-- changing from buttons with conditional rendering to routes -->
-
-  <!-- <div class="landing-page" *ngIf="isLanding">
-    <h1>{{ txtLanding }}</h1>
-  </div>
-  <div class="about-page" *ngIf="isAbout">
-    <spa-about></spa-about>
-  </div>
-  <div class="contact-page" *ngIf="isContact">
-    <spa-contact [lang]="language"></spa-contact>
-  </div> -->
-
   <div class="landing-page">
-    <h1>{{ txtLanding }}</h1>
+    <h1>{{ titleLanding }}</h1>
+    <p *ngIf="isText">{{ txtLanding }}</p>
   </div>
 </div>

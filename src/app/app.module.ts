@@ -14,7 +14,9 @@ import { NavbarComponent } from './features/navbar/navbar.component';
 import { NavbarMenuComponent } from './features/navbar-menu/navbar-menu.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './features/footer/footer.component';
+
+import { TextTranslationService } from './shared/text-translation.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     MatMenuModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [ TextTranslationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

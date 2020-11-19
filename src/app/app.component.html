@@ -1,3 +1,5 @@
-<spa-navbar (updateLangEvent)="updateLanguage($event)"></spa-navbar>
-<router-outlet [lang]="language"></router-outlet>
+<nav>
+  <spa-navbar (updateLangEvent)="updateLanguage($event)" [catTranslation]="textTranslation"></spa-navbar>
+</nav>
+<router-outlet></router-outlet>
 <spa-footer></spa-footer>

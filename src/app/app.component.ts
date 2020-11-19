@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import dataTexts from './shared/all-texts.js';
-import { TextTranslationService } from './shared/text-translation.service';
 
 @Component({
   selector: 'spa-root',
@@ -11,10 +10,9 @@ export class AppComponent {
   title = 'desafioAvanade';
 
   language: string = "PT";
+  textTranslation: Object = dataTexts;
 
   updateLanguage(newLang: string) {
-    console.log(dataTexts);
-    console.log(TextTranslationService); 
     console.log(this.language);
     this.language = newLang;
   }
