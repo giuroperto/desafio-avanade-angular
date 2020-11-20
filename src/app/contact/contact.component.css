@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Eater&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Catamaran&display=swap');
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: 'Berkshire Swash', monospace;
-  font-size: 8rem;
-  line-height: 12vh;
+  font-size: 7rem;
+  line-height: 16vh;
   text-align: center;
 }
 
@@ -23,7 +23,6 @@ h1, h2, h3, h4, h5, h6 {
 .contact-links {
   display: flex;
   flex-direction: row;
-  /* padding: 6rem; */
   align-items: center;
   justify-content: space-around;
 }

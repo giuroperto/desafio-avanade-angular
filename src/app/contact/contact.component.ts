@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TextTranslationService } from '../shared/text-translation.service';
 
 @Component({
   selector: 'spa-contact',
@@ -6,39 +7,39 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  @Input() lang: string;
-
-  contactText: string;
+  lang: string;
+  error: any;
   contactTitle: string;
+  contactText: string;
+  isText: boolean = false;
 
-  titleEN: string = "Let's get in touch...";
-  titlePT: string = 'Vamos conversar?';
-  titleIT: string = 'Facciamo due chiacchiere?';
-  textEN: string = 'Here is where you can find me most of the time...';
-  textPT: string = 'Onde você pode me achar na maior parte do tempo...';
-  textIT: string = 'Qua ci sono i link di dove trovarmi per la maggior parte del tempo...';
-
-  constructor() { }
+  constructor(private textTranslationService: TextTranslationService) { }
 
   ngOnInit(): void {
-    this.changeTxtContact();
-  }
-  
-  ngOnChanges() {
-    this.changeTxtContact();
+    this.getLang();
+    this.getContent();
   }
 
-  changeTxtContact() {
-    if (this.lang === 'PT') {
-      this.contactText = this.textPT;
-      this.contactTitle = this.titlePT;
-    } else if (this.lang === 'EN') {
-      this.contactText = this.textEN;
-      this.contactTitle = this.titleEN;
-    } else {
-      this.contactText = this.textIT;
-      this.contactTitle = this.titleIT;
+  getLang() {
+    this.textTranslationService.getLanguage().subscribe(
+      (data: string) => {
+        this.lang = data;
+        console.log(data);
+        this.getContent();
+      }, error => {
+        this.error = error;
+      });
+  }
+
+  getContent() {
+    this.contactTitle = this.textTranslationService.getData()[this.lang].contact.title;
+    this.contactText = this.textTranslationService.getData()[this.lang].contact.text;
+
+    if (this.contactText !== '') {
+      this.isText = true;
     }
-  }
 
+    console.log(this.contactTitle);
+    console.log(this.contactText);
+  }
 }

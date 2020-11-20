@@ -33,13 +33,14 @@
 }
 
 .logo a {
-  padding-right: 40vw;
+  padding-right: 35vw;
   text-decoration: none;
   color: black;
 }
 
 .logo h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  color: white;
 }
 
 .home-icon {
@@ -52,7 +53,7 @@
 }
 
 .navbar-list > a {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-right: 1.5vw;
   text-decoration: none;
   color: black;

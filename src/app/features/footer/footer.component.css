@@ -1,15 +1,21 @@
 .footer {
-  height: 3.5vh;
+  height: 4vh;
   background-color: rgb(44, 29, 62);
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer p {
   text-align: center;
   margin: 0;
+  height: 100%;
+  font-size: 0.8rem;
 }
 
 .heart-icon {
   position: relative;
+  font-size: 1rem;
   bottom: -0.6vh;
 }
