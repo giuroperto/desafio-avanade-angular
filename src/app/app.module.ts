@@ -36,7 +36,7 @@ import { TextTranslationService } from './shared/text-translation.service';
     MatIconModule,
     MatMenuModule,
     MatTabsModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [ TextTranslationService ],
   bootstrap: [AppComponent]

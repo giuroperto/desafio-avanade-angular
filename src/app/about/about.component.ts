@@ -64,13 +64,6 @@ export class AboutComponent implements OnInit {
     this.randomPosition = Math.floor(Math.random()*this.arrayLength);
     this.randomCuriosity = this.aboutCuriosities[this.randomPosition];
     this.hasCuriosity = true;
-
-    console.log(this.randomCuriosity);
-    console.log(this.randomPosition);
   }
 
 }
-
-//   isText: boolean = false;
-
-
