@@ -14,8 +14,7 @@ export class AboutComponent implements OnInit {
   aboutText: string;
   buttonTxt: string;
 
-  aboutCategories: Array<string>;
-  aboutCatCuriosities: Array<Object>;
+  aboutCategories: Array<string> = [];
   aboutCuriosities: Array<string>;
 
   randomPosition: number;
@@ -44,13 +43,15 @@ export class AboutComponent implements OnInit {
   getContent() {
     this.aboutTitle = this.textTranslationService.getData()[this.lang].about.title;
     this.aboutText = this.textTranslationService.getData()[this.lang].about.text;
-    this.aboutCategories = this.textTranslationService.getData()[this.lang].about.categories;
     this.aboutCuriosities = this.textTranslationService.getData()[this.lang].about.curiosities;
     
-    this.aboutCatCuriosities = this.textTranslationService.getData()[this.lang].about.curiosities[3];
+    for (let i = 0; i <= 3; i += 1) {
+      console.log(this.textTranslationService.getData()[this.lang].about.categories[i].name);
+
+      this.aboutCategories.push(this.textTranslationService.getData()[this.lang].about.categories[i].name)
+    }
+
     this.buttonTxt = this.textTranslationService.getData()[this.lang].about.categories[3].btn;
-
-
 
     // if (this.contactText !== '') {
     //   this.isText = true;

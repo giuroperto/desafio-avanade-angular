@@ -36,7 +36,7 @@ export class TextTranslationService {
           name: "Curiosities",
           btn: "Generate a curiosity",
         }],
-        curiosities: ["I've been a vegetarian for over 10 years", "I'm really bad at lying, I will always end a lie with a laugh. Btw, when I play AMONG US I always feel bad when I'm the impostor. LOL", "My first contact with the Internet was when I was little and my parents would let me play kids games online. But I've only realised its real power when I came accross my first Tomb Raider's walkthrough. lol"],
+        curiosities: ["I've been a vegetarian for over 10 years", "I'm really bad at lying, I will always end a lie with a laugh. Btw, when I play AMONG US I always feel bad when I'm the impostor.", "My first contact with the Internet was when I was little and my parents would let me play kids games online. But I've only realised its real power when I came accross my first Tomb Raider's walkthrough. lol"],
       },
       navbar: {
         categories: ["whoami", "contact me"]

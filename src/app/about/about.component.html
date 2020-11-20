@@ -5,19 +5,19 @@
   </div>
   <div class="about-tab">
     <mat-tab-group dynamicHeight>
-      <!-- <mat-tab label={{aboutCategories[0].name}}> -->
+      <mat-tab label="{{ aboutCategories[0] }}">
         <!-- <div class="example-small-box mat-elevation-z4">{{ aboutCategories[0].text }}</div> -->
-        <!-- <div class="example-large-box mat-elevation-z4">OiOI</div> -->
-      <!-- </mat-tab> -->
-      <!-- <mat-tab label={{aboutCategories[1].name}}> -->
+        <div class="example-large-box mat-elevation-z4">OiOI</div>
+      </mat-tab>
+      <mat-tab label="{{ aboutCategories[1] }}">
         <!-- <div class="example-small-box mat-elevation-z4">{{ aboutCategories[0].text }}</div> -->
-        <!-- <div class="example-small-box mat-elevation-z4">OiOI</div> -->
-      <!-- </mat-tab> -->
-      <!-- <mat-tab label={{aboutCategories[2].name}}> -->
+        <div class="example-small-box mat-elevation-z4">OiOI</div>
+      </mat-tab>
+      <mat-tab label="{{ aboutCategories[2] }}">
         <!-- <div class="example-small-box mat-elevation-z4">{{ aboutCategories[0].text }}</div> -->
-        <!-- <div class="example-small-box mat-elevation-z4">OiOI</div> -->
-      <!-- </mat-tab> -->
-      <mat-tab label={{aboutCatCuriosities[3].name}}>
+        <div class="example-small-box mat-elevation-z4">OiOI</div>
+      </mat-tab>
+      <mat-tab label="{{ aboutCategories[3] }}">
         <button mat-raised-button color="accent" (click)="getRandomCuriosity()">{{ buttonTxt }}</button>
         <div class="example-large-box mat-elevation-z4" *ngIf="hasCuriosity">{{ randomCuriosity }}</div>
       </mat-tab>
