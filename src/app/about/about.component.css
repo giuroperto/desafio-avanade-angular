@@ -36,6 +36,10 @@
   font-size: 1rem;
 }
 
+.about-card {
+  width: 70vw !important;
+}
+
 .btn-curiosity {
   margin: 5vh 0 0 5vw; 
 }
