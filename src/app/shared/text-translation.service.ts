@@ -25,13 +25,13 @@ export class TextTranslationService {
         text: "I have a degree in Business but lately I've discovered my passion for programming... I'm a full-stack web developer (MERN stack) currently learning about the Angular framework.",
         categories: [{
           name: "About",
-          text: "",
+          text: ["",]
         }, {
           name: "Professional Experiences",
-          text: [],
+          text: ["Marketing Trainee", "Revenue Management Analyst", "Pricing & Revenue Management Analyst", "Manager & IT support"],
         }, {
           name: "Education",
-          text: ["Business - FGV EAESP", "Semester Abroad - University of Otago (NZ)", "Msc International Events and Festival Management - Edinburgh Napier University (UK)", "Full-Stack Web Dev Bootcamp - Ironhack (SP)", "Cadet - 42SP"],
+          text: ["Bachelor in Business", "Semester Abroad", "Msc International Events and Festival Management", "Full-Stack Web Dev Bootcamp", "Cadet"],
         }, {
           name: "Curiosities",
           btn: "Generate a curiosity",
@@ -56,13 +56,13 @@ export class TextTranslationService {
         text: "Sou administradora de formação e full-stack de coração (MERN stack, agora aprendendo Angular)",
         categories: [{
           name: "Sobre",
-          text: "",
+          text: [""],
         }, {
           name: "Experiências Profissionais",
-          text: [],
+          text: ["Trainee de Marketing", "Analista de Revenue Management", "Analista de Pricing & Revenue Management", "Gerente e suporte de TI"],
         }, {
           name: "Educação",
-          text: ["Administração - FGV EAESP", "Intercâmbio - University of Otago (NZ)", "Mestrado em Gestão de Eventos Internacionais e Festivais - Edinburgh Napier University (UK)", "Full-Stack Web Dev Bootcamp - Ironhack (SP)", "Cadete - 42SP"],
+          text: ["Graduação em Administração", "Intercâmbio", "Mestrado em Gestão de Eventos Internacionais e Festivais", "Full-Stack Web Dev Bootcamp", "Cadete"],
         }, {
           name: "Curiosidades",
           btn: "Gerar uma curiosidade",
@@ -87,7 +87,7 @@ export class TextTranslationService {
         text: "",
         categories: [{
           name: "Sobre",
-          text: "",
+          text: [""],
         }, {
           name: "Experiências Profissionais",
           text: [],

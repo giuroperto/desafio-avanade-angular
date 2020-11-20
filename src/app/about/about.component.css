@@ -36,6 +36,22 @@
   font-size: 1rem;
 }
 
+.btn-curiosity {
+  margin: 5vh 0 0 5vw; 
+}
+
+.curiosity-card {
+  font-size: 1.5rem;
+  line-height: 25px;
+  background-color: white;
+}
+
+.container { 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .example-small-box, .example-large-box {
   display: flex;
   align-items: center;
